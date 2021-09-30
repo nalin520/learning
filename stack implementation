@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+#define SIZE 10
+class stack{
+    int pos = -1;
+    int stack1[SIZE];
+public:
+    void push(int value){
+        if(pos<=SIZE || pos >0){
+            pos++;
+            stack1[pos] = value;
+        }else{
+            cout<<"out of bounds";
+
+        }
+    }
+    void pop(){
+        if(pos==-1){
+            cout<<"stack is empty";
+        }else{
+            pos--;
+        }
+    }
+    void peek(){
+        if(pos==-1){
+            cout<<"empty";
+        }else{
+            cout<<stack1[pos];
+        }
+    }
+    void display(){
+
+    }
+};
+int main() {
+    stack st;
+    st.push(10);
+    st.push(5);
+    st.peek();
+    cout<<"\n";
+    st.pop();
+    st.peek();
+    return 0;
+
+}
